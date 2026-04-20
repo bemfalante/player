@@ -4,29 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rádio TV Bem Falante</title>
+    
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#FFFFFF">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <style>
         body { 
             font-family: 'Segoe UI', Roboto, sans-serif; 
-            margin: 0; 
-            padding: 0;
+            margin: 0; padding: 0;
             display: flex; 
             flex-direction: column; 
             align-items: center; 
-            justify-content: space-between; /* Distribui entre topo e base */
+            justify-content: space-between;
             height: 100vh;
-            
-            /* Logo real como fundo total */
-            background-image: url('logo.png');
+            background: #FFFFFF url('logo.png') no-repeat center;
             background-size: contain;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-color: #FFFFFF; 
             overflow: hidden;
         }
 
-        /* Status "NO AR" posicionado na área cinza superior do logo */
+        /* Mantendo a posição original de 10vh para não bater no microfone */
         .status-topo {
-            margin-top: 10vh; /* Ajuste este valor para subir/descer no cinza superior */
+            margin-top: 10vh; 
             display: flex;
             align-items: center;
             gap: 10px;
@@ -41,7 +41,6 @@
             height: 15px;
             background: #FF0000;
             border-radius: 50%;
-            box-shadow: 0 0 0 rgba(255, 0, 0, 0.4);
             animation: pulse 1.5s infinite;
         }
 
@@ -51,17 +50,36 @@
             100% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0); }
         }
 
-        /* Player posicionado na área cinza inferior do logo */
+        /* Mantendo a posição original de 10vh para não bater no microfone */
         .player-base {
-            margin-bottom: 10vh; /* Ajuste este valor para subir/descer no cinza inferior */
+            margin-bottom: 10vh; 
             width: 80%;
             max-width: 300px;
         }
 
-        audio {
-            width: 100%;
+        audio { 
+            width: 100%; 
             height: 40px;
-            opacity: 0.9; /* Deixa o player levemente integrado ao fundo */
+            opacity: 0.9;
+        }
+
+        /* Botão Flutuante Discreto */
+        .insta-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(45deg, #f09433, #dc2743, #bc1888);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 100;
         }
     </style>
 </head>
@@ -76,6 +94,10 @@
             <source src="https://stream.zeno.fm/f718a010rxhvv" type="audio/mpeg">
         </audio>
     </div>
+
+    <a href="http://instagram.com/radiotvbemfalante" target="_blank" class="insta-float">
+        <i class="fab fa-instagram"></i>
+    </a>
 
 </body>
 </html>
