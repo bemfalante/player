@@ -5,147 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rádio TV Bem Falante</title>
     <style>
-        :root {
-            --vermelho: #D32F2F;
-            --laranja: #F57C00;
-            --cinza-escuro: #424242;
-            --cinza-claro: #F5F5F5;
-            --branco: #FFFFFF;
-        }
-
         body { 
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
-            background-color: var(--cinza-claro); 
-            color: var(--cinza-escuro); 
+            font-family: 'Segoe UI', Roboto, sans-serif; 
             margin: 0; 
+            padding: 0;
             display: flex; 
             flex-direction: column; 
             align-items: center; 
-            min-height: 100vh;
-            text-align: center;
+            justify-content: space-between; /* Distribui entre topo e base */
+            height: 100vh;
+            
+            /* Logo real como fundo total */
+            background-image: url('logo.png');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #FFFFFF; 
+            overflow: hidden;
         }
 
-        header { 
-            background: linear-gradient(135deg, var(--vermelho), var(--laranja));
-            color: var(--branco); 
-            width: 100%; 
-            padding: 35px 0; /* Espaçamento maior para o logo respirar */
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        .logo-img {
-            max-width: 180px; /* Aumentado para compensar a retirada do texto */
-            height: auto;
-            display: block;
-            margin: 0 auto;
-            filter: drop-shadow(2px 2px 6px rgba(0,0,0,0.3));
-        }
-
-        .container { 
-            flex: 1; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            justify-content: center; 
-            width: 90%;
-            max-width: 500px;
-            padding: 20px 0;
-        }
-
-        .player-box {
-            width: 100%;
-            background: var(--branco);
-            border-top: 5px solid var(--vermelho);
-            border-radius: 15px;
-            padding: 30px 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-        }
-
-        .status-live {
-            color: var(--vermelho);
-            font-weight: bold;
-            font-size: 0.9rem;
-            margin-bottom: 15px;
+        /* Status "NO AR" posicionado na área cinza superior do logo */
+        .status-topo {
+            margin-top: 10vh; /* Ajuste este valor para subir/descer no cinza superior */
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 8px;
+            gap: 10px;
+            font-weight: 900;
+            font-size: 1.2rem;
+            color: #333;
+            text-transform: uppercase;
         }
 
-        .pulse {
-            width: 10px;
-            height: 10px;
-            background: var(--vermelho);
+        .pulse-red {
+            width: 15px;
+            height: 15px;
+            background: #FF0000;
             border-radius: 50%;
-            animation: pulse 2s infinite;
+            box-shadow: 0 0 0 rgba(255, 0, 0, 0.4);
+            animation: pulse 1.5s infinite;
         }
 
         @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(211, 47, 47, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(211, 47, 47, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(211, 47, 47, 0); }
+            0% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 0, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0); }
+        }
+
+        /* Player posicionado na área cinza inferior do logo */
+        .player-base {
+            margin-bottom: 10vh; /* Ajuste este valor para subir/descer no cinza inferior */
+            width: 80%;
+            max-width: 300px;
         }
 
         audio {
             width: 100%;
-            margin-top: 10px;
-            height: 45px;
-        }
-
-        footer { 
-            width: 100%; 
-            padding: 30px 0; 
-            background-color: var(--branco);
-            border-top: 1px solid #ddd;
-        }
-
-        .btn-insta { 
-            display: inline-block;
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
-            color: white; 
-            padding: 15px 35px; 
-            text-decoration: none; 
-            border-radius: 50px; 
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-
-        .tagline {
-            font-size: 0.9rem;
-            color: var(--cinza-escuro);
-            margin-top: 20px;
-            font-style: italic;
+            height: 40px;
+            opacity: 0.9; /* Deixa o player levemente integrado ao fundo */
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <img src="logo.png" alt="Logo TV Bem Falante" class="logo-img">
-    </header>
-
-    <div class="container">
-        <div class="status-live">
-            <div class="pulse"></div> NO AR AGORA
-        </div>
-        
-        <div class="player-box">
-            <p style="margin-bottom: 20px; font-weight: 500;">Ouvir Programação ao Vivo</p>
-            
-            <audio controls>
-                <source src="https://stream.zeno.fm/f718a010rxhvv" type="audio/mpeg">
-                Seu navegador não suporta este player.
-            </audio>
-            
-            <p class="tagline">A voz que fala com você!</p>
-        </div>
+    <div class="status-topo">
+        <div class="pulse-red"></div> NO AR
     </div>
 
-    <footer>
-        <a href="http://instagram.com/radiotvbemfalante" target="_blank" class="btn-insta">
-            Siga no Instagram
-        </a>
-    </footer>
+    <div class="player-base">
+        <audio controls>
+            <source src="https://stream.zeno.fm/f718a010rxhvv" type="audio/mpeg">
+        </audio>
+    </div>
 
 </body>
 </html>
