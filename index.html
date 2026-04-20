@@ -30,13 +30,22 @@
             background: linear-gradient(135deg, var(--vermelho), var(--laranja));
             color: var(--branco); 
             width: 100%; 
-            padding: 30px 0; 
+            padding: 25px 0; 
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Estilo para o Logo Oficial */
+        .logo-img {
+            max-width: 120px; /* Tamanho ideal para a tela do Semp Go */
+            height: auto;
+            display: block;
+            margin: 0 auto 10px auto;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
         }
 
         h1 { 
             margin: 0; 
-            font-size: 1.8rem; 
+            font-size: 1.6rem; 
             text-transform: uppercase; 
             letter-spacing: 2px;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
@@ -53,7 +62,6 @@
             padding: 20px 0;
         }
 
-        /* Player Customizado */
         .player-box {
             width: 100%;
             background: var(--branco);
@@ -79,7 +87,6 @@
             height: 10px;
             background: var(--vermelho);
             border-radius: 50%;
-            box-shadow: 0 0 0 rgba(211, 47, 47, 0.4);
             animation: pulse 2s infinite;
         }
 
@@ -111,12 +118,7 @@
             border-radius: 50px; 
             font-weight: bold;
             font-size: 1.1rem;
-            transition: transform 0.2s;
             box-shadow: 0 4px 15px rgba(220, 39, 67, 0.3);
-        }
-
-        .btn-insta:active {
-            transform: scale(0.95);
         }
 
         .tagline {
@@ -130,6 +132,7 @@
 <body>
 
     <header>
+        <img src="logo.png" alt="Logo TV Bem Falante" class="logo-img">
         <h1>TV BEM FALANTE</h1>
     </header>
 
