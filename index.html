@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rádio TV Bem Falante</title>
     <style>
-        /* Cores Extraídas: Vermelho, Laranja e Cinza */
         :root {
             --vermelho: #D32F2F;
             --laranja: #F57C00;
@@ -30,25 +29,16 @@
             background: linear-gradient(135deg, var(--vermelho), var(--laranja));
             color: var(--branco); 
             width: 100%; 
-            padding: 25px 0; 
+            padding: 35px 0; /* Espaçamento maior para o logo respirar */
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        /* Estilo para o Logo Oficial */
         .logo-img {
-            max-width: 120px; /* Tamanho ideal para a tela do Semp Go */
+            max-width: 180px; /* Aumentado para compensar a retirada do texto */
             height: auto;
             display: block;
-            margin: 0 auto 10px auto;
-            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
-        }
-
-        h1 { 
-            margin: 0; 
-            font-size: 1.6rem; 
-            text-transform: uppercase; 
-            letter-spacing: 2px;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+            margin: 0 auto;
+            filter: drop-shadow(2px 2px 6px rgba(0,0,0,0.3));
         }
 
         .container { 
@@ -118,7 +108,6 @@
             border-radius: 50px; 
             font-weight: bold;
             font-size: 1.1rem;
-            box-shadow: 0 4px 15px rgba(220, 39, 67, 0.3);
         }
 
         .tagline {
@@ -133,7 +122,6 @@
 
     <header>
         <img src="logo.png" alt="Logo TV Bem Falante" class="logo-img">
-        <h1>TV BEM FALANTE</h1>
     </header>
 
     <div class="container">
